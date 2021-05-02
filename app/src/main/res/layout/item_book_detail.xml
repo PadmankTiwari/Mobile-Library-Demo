@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.libraryapp.model.BookInformation" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cdListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_padding_5dp"
+        android:layout_marginBottom="@dimen/margin_padding_5dp"
+        app:cardCornerRadius="@dimen/grid_2"
+        app:cardElevation="@dimen/margin_padding_10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:padding="@dimen/margin_padding_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBookImage"
+                android:layout_width="100sp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:imageUrl="@{item.bookImageUrl}" />
+
+            <TextView
+                android:id="@+id/tvBookName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_padding_5dp"
+                android:layout_marginTop="@dimen/margin_padding_5dp"
+                android:paddingHorizontal="@dimen/margin_padding_5dp"
+                android:text="@{item.bookName}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivBookImage"
+                app:layout_constraintTop_toTopOf="@id/ivBookImage"
+                tools:text="Angels and Demons" />
+
+            <TextView
+                android:id="@+id/tvBookDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="3dp"
+                android:layout_marginTop="@dimen/margin_padding_5dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:paddingHorizontal="@dimen/margin_padding_5dp"
+                android:text="@{item.bookDescription}"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/tvBookName"
+                app:layout_constraintStart_toStartOf="@id/tvBookName"
+                app:layout_constraintTop_toBottomOf="@id/tvBookName"
+                tools:text="Angels and demons" />
+
+            <TextView
+                android:id="@+id/tvBookAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_padding_5dp"
+                android:layout_marginTop="@dimen/margin_padding_8dp"
+                android:paddingHorizontal="@dimen/margin_padding_5dp"
+                android:text="@string/author"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/ivBookImage"
+                app:layout_constraintStart_toStartOf="@id/tvBookName" />
+
+            <TextView
+                android:id="@+id/tvBookAuthorValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.bookAuthor}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvBookAuthor"
+                app:layout_constraintStart_toEndOf="@id/tvBookAuthor"
+                app:layout_constraintTop_toTopOf="@id/tvBookAuthor"
+                tools:text="Angels" />
+
+            <TextView
+                android:id="@+id/tvBookPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_padding_8dp"
+                android:text="@string/price"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvBookAuthor"
+                app:layout_constraintEnd_toStartOf="@id/tvBookPriceValue" />
+
+            <TextView
+                android:id="@+id/tvBookPriceValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_padding_5dp"
+                android:ellipsize="end"
+                android:text="@{item.bookPrice}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvBookAuthor"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Demons" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Library App</string>
+    <string name="author">Author:</string>
+    <string name="price">Price: Rs.</string>
+    <string name="book_shelf">Book Shelf</string>
+    <string name="add_product">Add Product</string>
+    <string name="sync_products">Sync Products</string>
+    <string name="add_books">Add Books</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_description">Product Description</string>
+    <string name="product_qty">Product Qty.</string>
+    <string name="product_price">Product Price</string>
+    <string name="save">SAVE</string>
+    <string name="welcome_to_mobile_book_store">Welcome To Mobile Book Store</string>
+    <string name="list_of_available_books">List of Available Books</string>
+    <string name="successfully_added_msg">Successfully Added</string>
+    <string name="incomplete_details_msg">Please Fill all Details</string>
+    <string name="name_empty_error">Product Name is Required</string>
+    <string name="desc_empty_error">Product Description is Required</string>
+    <string name="qty_empty_error">Product Quantity is Required</string>
+    <string name="price_empty_error">Product Price is Required</string>
+    <string name="no_internet_error">No Internet Connection!!</string>
+    <string name="updated_data_msg">Already Up-to-date</string>
+</resources>
