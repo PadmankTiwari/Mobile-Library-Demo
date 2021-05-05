@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.libraryapp.R
 import com.example.libraryapp.databinding.FragmentBookListBinding
@@ -31,6 +32,15 @@ class BookListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bookListViewModel.callGetAllBooks()
         observeResponse()
+        onClick()
+    }
+
+    private fun onClick() {
+        mBinding.clickListener = View.OnClickListener {
+            when(it.id) {
+                R.id.btnBack -> findNavController().popBackStack()
+            }
+        }
     }
 
     private fun observeResponse() {

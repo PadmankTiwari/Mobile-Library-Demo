@@ -14,4 +14,8 @@
         <!-- Customize your theme here. -->
         <item name="textInputStyle">@style/Widget.BookApp.TextInputLayout</item>
     </style>
+
+    <style name="Theme.LibraryApp.Splash" parent="Theme.LibraryApp">
+        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    </style>
 </resources>

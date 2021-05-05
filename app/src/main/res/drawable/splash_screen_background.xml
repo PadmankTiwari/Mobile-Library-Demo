@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/books_logo"
+        android:bottom="325dp"
+        android:left="90dp"
+        android:right="90dp"
+        android:top="325dp"/>
+</layer-list>

@@ -23,6 +23,19 @@
             android:background="@drawable/books"
             android:scaleType="centerCrop" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_40"
+            android:layout_marginStart="@dimen/grid_2"
+            android:onClick="@{clickListener}"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/vMain"
             android:layout_width="wrap_content"

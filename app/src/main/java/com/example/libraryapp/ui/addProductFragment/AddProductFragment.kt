@@ -67,6 +67,7 @@ class AddProductFragment : Fragment() {
                         ).show()
 
                 }
+                R.id.btnBack -> findNavController().popBackStack()
             }
         }
     }

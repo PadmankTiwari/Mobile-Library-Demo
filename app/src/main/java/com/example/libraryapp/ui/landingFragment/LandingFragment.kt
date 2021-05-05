@@ -47,7 +47,7 @@ class LandingFragment : Fragment() {
                         Toast.makeText(
                             requireContext(),
                             getString(R.string.no_internet_error),
-                            Toast.LENGTH_LONG
+                            Toast.LENGTH_SHORT
                         ).show()
                     }
                 }

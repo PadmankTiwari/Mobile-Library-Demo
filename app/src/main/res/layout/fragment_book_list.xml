@@ -8,6 +8,10 @@
         <variable
             name="bookListViewModel"
             type="com.example.libraryapp.ui.bookListFragment.BookListViewModel" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +23,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/books" />
+            android:src="@drawable/books"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickListener}"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvHeading"
+            app:layout_constraintBottom_toBottomOf="@id/tvHeading"
+            app:layout_constraintEnd_toStartOf="@id/tvHeading"/>
 
         <TextView
             android:id="@+id/tvHeading"

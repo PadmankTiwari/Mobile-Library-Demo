@@ -18,7 +18,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var mBinding: FragmentHomeBinding
-    private var apiCalled = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +33,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onClick()
-        observeResponse()
     }
 
     private fun onClick() {
@@ -48,8 +46,8 @@ class HomeFragment : Fragment() {
                         SavedPreferences.getInstance()?.syncProduct()?.let { product ->
                             if (product.productName.isEmpty().not()) {
                                 homeViewModel.syncProduct(product)
+                                observeResponse()
                                 SavedPreferences.getInstance()?.clearProduct()
-                                apiCalled = false
 
                             } else
                                 Toast.makeText(
@@ -62,20 +60,19 @@ class HomeFragment : Fragment() {
                         Toast.makeText(
                             requireContext(),
                             getString(R.string.no_internet_error),
-                            Toast.LENGTH_LONG
+                            Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
+                R.id.btnBack -> findNavController().popBackStack()
             }
         }
     }
 
     private fun observeResponse() {
-        if (apiCalled) {
             homeViewModel.apiResponse.observe(viewLifecycleOwner, {
                 Toast.makeText(requireContext(), it.results.message, Toast.LENGTH_SHORT).show()
             })
-        }
     }
 
 }

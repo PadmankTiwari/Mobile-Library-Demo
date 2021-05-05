@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/landingFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -22,12 +22,12 @@
     <fragment
         android:id="@+id/bookListFragment"
         android:name="com.example.libraryapp.ui.bookListFragment.BookListFragment"
-        android:label="fragment_book_list"
+        android:label="Book List"
         tools:layout="@layout/fragment_book_list" />
     <fragment
         android:id="@+id/landingFragment"
         android:name="com.example.libraryapp.ui.landingFragment.LandingFragment"
-        android:label="fragment_landing"
+        android:label="Landing"
         tools:layout="@layout/fragment_landing">
         <action
             android:id="@+id/action_landingFragment_to_bookListFragment"
@@ -35,5 +35,13 @@
         <action
             android:id="@+id/action_landingFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.libraryapp.ui.splash.SplashFragment"
+        android:label="Splash">
+        <action
+            android:id="@+id/action_splashFragment_to_landingFragment"
+            app:destination="@id/landingFragment" />
     </fragment>
 </navigation>
